@@ -13,7 +13,9 @@ def welcome_info()->None:
 
 
 def print_one_card(one_card_dict)->None:
-    """print card info gracefully"""
+    """print card info gracefully
+    :rtype: object
+    """
 
     print("-" * 20)
     for key in one_card_dict.keys():
