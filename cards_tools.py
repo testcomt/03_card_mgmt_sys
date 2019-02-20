@@ -21,3 +21,12 @@ def print_one_card(one_card_dict)->None:
     for key in one_card_dict.keys():
         print("%s : %s" % (key, one_card_dict[key]))
     print("-" * 20)
+
+
+def print_one_card_values(one_card_dict)->None:
+    """Only print card values in a line"""
+
+    for value in one_card_dict.values():
+        print(value.ljust(14), end='\t')
+    print("\n")
+

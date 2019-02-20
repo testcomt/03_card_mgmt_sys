@@ -11,6 +11,10 @@ next_choice = ["m", "d"]
 CARD_FIELD = ["name", "tel", "qq", "mail"]
 
 
+# TODO: still unsure how can I write this style of codes (3 separate small funcs
+#  instead of one long func as the video does)
+
+
 def get_card_input_imd()->list:
     """Obtain user's input for his card
     return a card info list
@@ -47,12 +51,39 @@ def new_card()->None:
     user_card_list.append(one_card_dict)
 
 
+def print_table_title_imd():
+    """print card title"""
+
+    print("-" * 100)
+    for field in CARD_FIELD:
+        print("", end="\t")
+
+        # TODO: names can't be over 14 characters, now
+
+        print(field.ljust(10), end="\t")
+        # why "\t\t" doesn't work?
+        # print(field, end="\t\t")
+    print("")
+    print("-" * 100)
+
+
 def show_all_cards()->None:
     """show all cards info"""
 
-    print("共有%d张名片" % len(user_card_list))
+    print("\n共有%d张名片" % len(user_card_list))
+    if len(user_card_list) == 0:
+        print('您可以使用"新建名片功能"创建名片\n')
+        return
+
+    print_table_title_imd()
+
+    i = 1
     for card in user_card_list:
-        cards_tools.print_one_card(card)
+        print("%d." % i, end="\t")
+        cards_tools.print_one_card_values(card)
+        i += 1
+    # don't add \n here, 'cause a return will be added by default
+    print("")
 
 
 def query_a_card_imd()->int:
@@ -97,7 +128,8 @@ def query_and_other_oper()->None:
     if find_card_index != -1:
         cards_tools.print_one_card(user_card_list[find_card_index])
 
-        user_next_choice = input("您要修改或删除该名片吗？m：修改；d：删除；其他：返回____")
+        user_next_choice = input("您要修改或删除该名片吗？"
+                                 "m：修改；d：删除；其他：返回____")
         if user_next_choice == next_choice[0]:  # m:修改
             mod_a_card_imd(find_card_index)
         elif user_next_choice == next_choice[1]:  # d：删除
