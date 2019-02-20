@@ -8,6 +8,7 @@ import cards_tools
 # record all cards info, each list item is a dict
 user_card_list = []
 next_choice = ["m", "d"]
+CARD_FIELD = ["name", "tel", "qq", "mail"]
 
 
 def get_card_input_imd()->list:
@@ -32,7 +33,7 @@ def create_a_card_imd()->dict:
     """create a card dict based on user's input
     return a card dict"""
 
-    return dict(zip(["name", "tel", "qq", "mail"], get_card_input_imd()))
+    return dict(zip(CARD_FIELD, get_card_input_imd()))
 
 
 def new_card()->None:
