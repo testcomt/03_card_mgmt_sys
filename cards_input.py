@@ -15,7 +15,7 @@ CARD_FIELD = ("name", "tel", "qq", "mail")
 #  instead of one long func as the video does)
 
 
-def get_card_input_imd()->list:
+def get_card_input_imd()->tuple:
     """Obtain user's input for his card return a card info list not checking
     correctness _imd - intermediate function, won't be called by main func
     """
@@ -29,12 +29,12 @@ def get_card_input_imd()->list:
     qq = input("QQ: ")
     mail = input("邮件：")
 
-    return [name, tel, qq, mail]
+    # parenthesis not needed, tuple by default
+    return name, tel, qq, mail
 
 
 def create_a_card_imd()->dict:
     """create a card dict based on user's input return a card dict"""
-
     return dict(zip(CARD_FIELD, get_card_input_imd()))
 
 
@@ -49,7 +49,7 @@ def new_card()->None:
     g_user_card_list.append(one_card_dict)
 
 
-def print_table_title_imd():
+def print_table_title_imd()->None:
     """print card title"""
 
     print("-" * 100)
