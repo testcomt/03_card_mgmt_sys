@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 # 1. Display welcome info
 # 2. Display and capture user's choice
 import cards_input
