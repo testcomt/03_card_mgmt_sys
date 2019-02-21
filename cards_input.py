@@ -7,8 +7,8 @@ import cards_tools
 
 # record all cards info, each list item is a dict
 user_card_list = []
-next_choice = ["m", "d"]
-CARD_FIELD = ["name", "tel", "qq", "mail"]
+NEXT_CHOICE = ("m", "d")
+CARD_FIELD = ("name", "tel", "qq", "mail")
 
 
 # TODO [0 - learning related]: still unsure how can I write this style of codes (3 separate small funcs
@@ -141,9 +141,9 @@ def query_and_other_oper()->None:
 
         user_next_choice = input("您要修改或删除该名片吗？"
                                  "m：修改；d：删除；其他：返回____")
-        if user_next_choice == next_choice[0]:  # m:修改
+        if user_next_choice == NEXT_CHOICE[0]:  # m:修改
             mod_a_card_imd(find_card_index)
-        elif user_next_choice == next_choice[1]:  # d：删除
+        elif user_next_choice == NEXT_CHOICE[1]:  # d：删除
             del_a_card_imd(find_card_index)
         else:
             print("返回上一级菜单！")

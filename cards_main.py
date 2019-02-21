@@ -5,8 +5,8 @@
 import cards_input
 import cards_tools
 
-# global variables
-first_choice = ["0", "1", "2", "3"]
+# global variables define a tuple due to its unchangeable attribute
+FIRST_CHOICE = ("0", "1", "2", "3")
 
 
 if __name__ == '__main__':
@@ -15,17 +15,17 @@ if __name__ == '__main__':
 
         choice = input("请输入您想要进行的操作：")
 
-        if choice not in first_choice:
+        if choice not in FIRST_CHOICE:
             print("您输入的选项不正确！")
 
-        elif choice == first_choice[0]:
+        elif choice == FIRST_CHOICE[0]:
             print("---退出系统成功！---")
             break
 
-        elif choice == first_choice[1]:
+        elif choice == FIRST_CHOICE[1]:
             cards_input.new_card()
 
-        elif choice == first_choice[2]:
+        elif choice == FIRST_CHOICE[2]:
             cards_input.show_all_cards()
 
         else:
