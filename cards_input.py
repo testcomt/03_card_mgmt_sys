@@ -11,17 +11,16 @@ next_choice = ["m", "d"]
 CARD_FIELD = ["name", "tel", "qq", "mail"]
 
 
-# TODO: still unsure how can I write this style of codes (3 separate small funcs
+# TODO [0 - learning related]: still unsure how can I write this style of codes (3 separate small funcs
 #  instead of one long func as the video does)
 
 
 def get_card_input_imd()->list:
-    """Obtain user's input for his card
-    return a card info list
-    not checking correctness
-    _imd - intermediate function, won't be called by main func"""
+    """Obtain user's input for his card return a card info list not checking
+    correctness _imd - intermediate function, won't be called by main func
+    """
 
-    # TODO: name is main index, shouldn't be duplicated
+    # TODO [2 - prod optimization]: name is main index, shouldn't be duplicated
     # tel and qq should be digital numbers and within a certain range
     # mail should abide by mail rules
 
@@ -34,8 +33,7 @@ def get_card_input_imd()->list:
 
 
 def create_a_card_imd()->dict:
-    """create a card dict based on user's input
-    return a card dict"""
+    """create a card dict based on user's input return a card dict"""
 
     return dict(zip(CARD_FIELD, get_card_input_imd()))
 
@@ -58,7 +56,7 @@ def print_table_title_imd():
     for field in CARD_FIELD:
         print("", end="\t")
 
-        # TODO: names can't be over 14 characters, now
+        # TODO [1 - code optimization]: names can't be over 14 characters, now
 
         print(field.ljust(10), end="\t")
         # why "\t\t" doesn't work?
@@ -100,9 +98,13 @@ def query_a_card_imd()->int:
 
 
 def mod_a_card_imd(card_index)->None:
-    """modify a card (dict) info"""
+    """modify a card (dict) info
 
-    # TODO: should name be allowed to modify?
+    Args:
+        card_index: which card to be modified [list index]
+    """
+
+    # TODO [3 - req related]: should name be allowed to modify?
 
     print("请输入更新后的名片信息：")
 
@@ -117,7 +119,11 @@ def mod_a_card_imd(card_index)->None:
 
 
 def del_a_card_imd(card_index)->None:
-    """delete a card"""
+    """delete a card
+
+    Args:
+        card_index: which card to be deleted
+    """
     if card_index < len(user_card_list):
         del user_card_list[card_index]
         print("成功删除名片！")
@@ -127,9 +133,7 @@ def del_a_card_imd(card_index)->None:
 
 
 def query_and_other_oper()->None:
-    """query a card;
-    modify this card
-    del this card"""
+    """query a card; modify this card del this card"""
 
     find_card_index = query_a_card_imd()
     if find_card_index != -1:

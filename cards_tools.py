@@ -2,8 +2,8 @@
 
 
 def welcome_info()->None:
-    """display welcome info
-    Attention: the item-info need to be updated with redefinition of choice_list
+    """display welcome info Attention: the item-info need to be updated with
+    redefinition of choice_list
     """
 
     print("*" * 30)
@@ -13,8 +13,10 @@ def welcome_info()->None:
 
 
 def print_one_card(one_card_dict)->None:
-    """print card info gracefully
-    :rtype: object
+    """print card info gracefully :rtype: object
+
+    Args:
+        one_card_dict: card dict to be printed out
     """
 
     print("-" * 20)
@@ -24,7 +26,11 @@ def print_one_card(one_card_dict)->None:
 
 
 def print_one_card_values(one_card_dict)->None:
-    """Only print card values in a line"""
+    """Only print card values in a line
+
+    Args:
+        one_card_dict: the card to be printed [dict]
+    """
 
     for value in one_card_dict.values():
         print(value.ljust(14), end='\t')
