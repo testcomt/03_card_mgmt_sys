@@ -105,7 +105,14 @@ def mod_a_card_imd(card_index)->None:
     # TODO: should name be allowed to modify?
 
     print("请输入更新后的名片信息：")
-    user_card_list[card_index] = create_a_card_imd()
+
+    current_dict = user_card_list[card_index]
+    # only update the field when it is not NULL
+    updated_dict = create_a_card_imd()
+    for item in CARD_FIELD:
+        if updated_dict[item] != "":
+            current_dict[item] = updated_dict[item]
+
     print("名片信息已经更新")
 
 
