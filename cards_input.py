@@ -6,7 +6,7 @@
 import cards_tools
 
 # record all cards info, each list item is a dict
-user_card_list = []
+g_user_card_list = []
 NEXT_CHOICE = ("m", "d")
 CARD_FIELD = ("name", "tel", "qq", "mail")
 
@@ -46,7 +46,7 @@ def new_card()->None:
     print("名片创建成功：")
     cards_tools.print_one_card(one_card_dict)
 
-    user_card_list.append(one_card_dict)
+    g_user_card_list.append(one_card_dict)
 
 
 def print_table_title_imd():
@@ -68,15 +68,15 @@ def print_table_title_imd():
 def show_all_cards()->None:
     """show all cards info"""
 
-    print("\n共有%d张名片" % len(user_card_list))
-    if len(user_card_list) == 0:
+    print("\n共有%d张名片" % len(g_user_card_list))
+    if len(g_user_card_list) == 0:
         print('您可以使用"新建名片功能"创建名片\n')
         return
 
     print_table_title_imd()
 
     i = 1
-    for card in user_card_list:
+    for card in g_user_card_list:
         print("%d." % i, end="\t")
         cards_tools.print_one_card_values(card)
         i += 1
@@ -88,10 +88,10 @@ def query_a_card_imd()->int:
     """return the card index, matching name queried"""
 
     name_input = input("请输入要查询的名字：")
-    for this_user_dict in user_card_list:
+    for this_user_dict in g_user_card_list:
         if name_input == this_user_dict["name"]:
             print("找到了！")
-            return user_card_list.index(this_user_dict)
+            return g_user_card_list.index(this_user_dict)
     else:
         print("没有找到！")
         return -1
@@ -108,7 +108,7 @@ def mod_a_card_imd(card_index)->None:
 
     print("请输入更新后的名片信息：")
 
-    current_dict = user_card_list[card_index]
+    current_dict = g_user_card_list[card_index]
     # only update the field when it is not NULL
     updated_dict = create_a_card_imd()
     for item in CARD_FIELD:
@@ -124,8 +124,8 @@ def del_a_card_imd(card_index)->None:
     Args:
         card_index: which card to be deleted
     """
-    if card_index < len(user_card_list):
-        del user_card_list[card_index]
+    if card_index < len(g_user_card_list):
+        del g_user_card_list[card_index]
         print("成功删除名片！")
     else:
         print("传入的名片索引错误！")
@@ -137,7 +137,7 @@ def query_and_other_oper()->None:
 
     find_card_index = query_a_card_imd()
     if find_card_index != -1:
-        cards_tools.print_one_card(user_card_list[find_card_index])
+        cards_tools.print_one_card(g_user_card_list[find_card_index])
 
         user_next_choice = input("您要修改或删除该名片吗？"
                                  "m：修改；d：删除；其他：返回____")
