@@ -2,8 +2,16 @@
 
 # 1. Display welcome info
 # 2. Display and capture user's choice
-import cards_input
+
 import cards_tools
+
+__VERSION_TYPE = False  # True = OO, False = non-OO
+
+if __VERSION_TYPE:
+    import cards_input_oo as cards_input
+else:
+    import cards_input_non_oo as cards_input
+
 
 # global variables define a tuple due to its unchangeable attribute
 FIRST_CHOICE = ("0", "1", "2", "3")
