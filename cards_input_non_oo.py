@@ -30,22 +30,6 @@ def new_card()->None:
     g_user_card_list.append(one_card_dict)
 
 
-def print_table_title_imd()->None:
-    """print card title"""
-
-    print("-" * 100)
-    for field in CARD_FIELD:
-        print("", end="\t")
-
-        # TODO [1 - code optimization]: names can't be over 14 characters, now
-
-        print(field.ljust(10), end="\t")
-        # why "\t\t" doesn't work?
-        # print(field, end="\t\t")
-    print("")
-    print("-" * 100)
-
-
 def show_all_cards()->None:
     """show all cards info"""
 
@@ -54,7 +38,7 @@ def show_all_cards()->None:
         print('您可以使用"新建名片功能"创建名片\n')
         return
 
-    print_table_title_imd()
+    cards_tools.print_table_title()
 
     i = 1
     for card in g_user_card_list:
