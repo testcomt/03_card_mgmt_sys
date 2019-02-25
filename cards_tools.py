@@ -15,7 +15,7 @@ def welcome_info()->None:
 
 def print_one_card(one_card_dict)->None:
     """print card info gracefully :rtype: object
-
+    only used in non-oo project
     Args:
         one_card_dict: card dict to be printed out
     """
@@ -38,7 +38,7 @@ def print_one_card_values(one_card_dict)->None:
     print("\n")
 
 
-def get_card_input_imd()->tuple:
+def get_card_input()->tuple:
     """Obtain user's input for his card return a card info list not checking
     correctness _imd - intermediate function, won't be called by main func
     """

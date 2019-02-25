@@ -16,7 +16,7 @@ CARD_FIELD = ("name", "tel", "qq", "mail")
 
 def create_a_card_imd()->dict:
     """create a card dict based on user's input return a card dict"""
-    return dict(zip(CARD_FIELD, cards_tools.get_card_input_imd()))
+    return dict(zip(CARD_FIELD, cards_tools.get_card_input()))
 
 
 def new_card()->None:
