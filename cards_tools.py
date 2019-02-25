@@ -14,10 +14,11 @@ def welcome_info()->None:
 
 
 def print_one_card(one_card_dict)->None:
-    """print card info gracefully :rtype: object
-    only used in non-oo project
+    """print card info gracefully :rtype: object only used in non-oo project
+    :param one_card_dict: card dict to be printed out
+
     Args:
-        one_card_dict: card dict to be printed out
+        one_card_dict:
     """
 
     print("-" * 20)
