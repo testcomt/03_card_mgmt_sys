@@ -1,7 +1,7 @@
 import cards_tools
 
 
-class Card:
+class Card(object):
     def __init__(self)->None:
         """initialization of card"""
 
