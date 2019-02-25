@@ -5,7 +5,6 @@
 
 import cards_tools
 
-# record all cards info, each list item is a dict
 g_user_card_list = []
 NEXT_CHOICE = ("m", "d")
 CARD_FIELD = ("name", "tel", "qq", "mail")
@@ -15,27 +14,9 @@ CARD_FIELD = ("name", "tel", "qq", "mail")
 #  instead of one long func as the video does)
 
 
-def get_card_input_imd()->tuple:
-    """Obtain user's input for his card return a card info list not checking
-    correctness _imd - intermediate function, won't be called by main func
-    """
-
-    # TODO [2 - prod optimization]: name is main index, shouldn't be duplicated
-    # tel and qq should be digital numbers and within a certain range
-    # mail should abide by mail rules
-
-    name = input("姓名：")
-    tel = input("电话：")
-    qq = input("QQ: ")
-    mail = input("邮件：")
-
-    # parenthesis not needed, tuple by default
-    return name, tel, qq, mail
-
-
 def create_a_card_imd()->dict:
     """create a card dict based on user's input return a card dict"""
-    return dict(zip(CARD_FIELD, get_card_input_imd()))
+    return dict(zip(CARD_FIELD, cards_tools.get_card_input_imd()))
 
 
 def new_card()->None:

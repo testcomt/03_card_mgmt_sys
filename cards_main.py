@@ -5,7 +5,7 @@
 
 import cards_tools
 
-__VERSION_TYPE = False  # True = OO, False = non-OO
+__VERSION_TYPE = True  # True = OO, False = non-OO
 
 if __VERSION_TYPE:
     import cards_input_oo as cards_input
