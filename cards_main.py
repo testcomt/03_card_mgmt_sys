@@ -23,20 +23,26 @@ if __name__ == '__main__':
 
         choice = input("请输入您想要进行的操作：")
 
-        if choice not in FIRST_CHOICE:
-            print("您输入的选项不正确！")
+        try:
 
-        elif choice == FIRST_CHOICE[0]:
-            print("---退出系统成功！---")
-            break
+            if choice not in FIRST_CHOICE:
+                print("您输入的选项不正确！")
 
-        elif choice == FIRST_CHOICE[1]:
-            cards_input.new_card()
+            elif choice == FIRST_CHOICE[0]:
+                print("---退出系统成功！---")
+                break
 
-        elif choice == FIRST_CHOICE[2]:
-            cards_input.show_all_cards()
+            elif choice == FIRST_CHOICE[1]:
+                cards_input.new_card()
 
-        else:
-            cards_input.query_and_other_oper()
+            elif choice == FIRST_CHOICE[2]:
+                cards_input.show_all_cards()
+
+            else:
+                cards_input.query_and_other_oper()
+
+        except Exception as result:
+            print("操作异常： "result)
 
     print("感谢您使用【名片管理系统】！")
+

@@ -66,3 +66,6 @@ def print_table_title()->None:
         print(field.ljust(10), end="\t")
     print("")
     print("-" * 100)
+
+
+
