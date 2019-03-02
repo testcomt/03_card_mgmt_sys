@@ -71,8 +71,9 @@ class Card:
                 print("找到了！您要找的名片：\n", card)
                 return self.__user_card_list.index(card)
         else:
+            # return -1 is not good, 'cause -1 is also a kind of index
+            # so no return means return None
             print("抱歉，没有找到所需名片！")
-            return -1
 
     def mod_a_card(self, index)->None:
         """Modify a card name can also be modified space characters are not
@@ -100,7 +101,6 @@ class Card:
         Args:
             index:
         """
-
         self.__user_card_list.pop(index)
         print("名片已经成功删除！")
 
@@ -124,15 +124,16 @@ def query_and_other_oper():
 
     find_card_index = g_my_card.query_a_card()
 
-    if find_card_index != -1:
+    if find_card_index is not None:
         user_next_choice = input("您要修改或删除该名片吗？"
                                  "m：修改；d：删除；其他：返回____")
         if user_next_choice == NEXT_CHOICE[0]:  # m:修改
             g_my_card.mod_a_card(find_card_index)
         elif user_next_choice == NEXT_CHOICE[1]:  # d：删除
-            g_my_card.del_a_card(find_card_index)
+            g_my_card.del_a_card(1)
         else:
 
             print("返回上一级菜单！")
+
 
 
