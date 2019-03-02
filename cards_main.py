@@ -42,7 +42,7 @@ if __name__ == '__main__':
                 cards_input.query_and_other_oper()
 
         except Exception as result:
-            print("操作异常： "result)
+            print("操作异常： ", result)
 
     print("感谢您使用【名片管理系统】！")
 
