@@ -17,7 +17,8 @@ else:
 FIRST_CHOICE = ("0", "1", "2", "3")
 
 
-if __name__ == '__main__':
+def main():
+
     while True:
         cards_tools.welcome_info()
 
@@ -46,3 +47,7 @@ if __name__ == '__main__':
 
     print("感谢您使用【名片管理系统】！")
 
+
+if __name__ == '__main__':
+
+    main()

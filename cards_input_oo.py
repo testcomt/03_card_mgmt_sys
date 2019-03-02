@@ -130,7 +130,7 @@ def query_and_other_oper():
         if user_next_choice == NEXT_CHOICE[0]:  # m:修改
             g_my_card.mod_a_card(find_card_index)
         elif user_next_choice == NEXT_CHOICE[1]:  # d：删除
-            g_my_card.del_a_card(1)
+            g_my_card.del_a_card(find_card_index)
         else:
 
             print("返回上一级菜单！")
