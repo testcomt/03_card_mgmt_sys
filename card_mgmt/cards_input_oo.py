@@ -1,4 +1,4 @@
-import cards_tools
+from card_mgmt import cards_tools
 
 
 class Card:

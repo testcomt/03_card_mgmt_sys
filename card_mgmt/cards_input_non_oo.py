@@ -3,7 +3,7 @@
 # 2. Display all cards
 # 3. Query one card (3.1 modify card; 3.2 del a card)
 
-import cards_tools
+from card_mgmt import cards_tools
 
 g_user_card_list = []
 NEXT_CHOICE = ("m", "d")
