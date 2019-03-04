@@ -1,6 +1,6 @@
 Author: Tai Xiaomei
 
-This is a exercise project.
+This is an exercise project.
 
 Release Date: 2019.2.25
 
@@ -13,6 +13,10 @@ NON-OO project: Non-Object oriented project
 Card Management System V2.0
 
 OO project: Object oriented project
+
+Card Management System V3.0
+
+make card_mgmt a package
 
 *******************************************
 

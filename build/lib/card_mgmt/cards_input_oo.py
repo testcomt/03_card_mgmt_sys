@@ -1,7 +1,7 @@
-import cards_tools
+from card_mgmt import cards_tools
 
 
-class Card(object):
+class Card:
     def __init__(self)->None:
         """initialization of card"""
 
